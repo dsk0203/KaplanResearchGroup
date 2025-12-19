@@ -3,6 +3,7 @@ import { getSEOTags } from "@/libs/seo";
 import config from "@/config";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Suspense } from "react";
 
 export const metadata = getSEOTags({
   title: `Cookie Policy | ${config.appName}`,
@@ -12,7 +13,11 @@ export const metadata = getSEOTags({
 const CookiePolicy = () => {
   return (
     <>
-      <Header />
+      <Suspense fallback={<div className="h-16 bg-white/95 backdrop-blur-sm shadow-sm" />}>
+        <Suspense fallback={<div className="h-16 bg-white/95 backdrop-blur-sm shadow-sm" />}>
+          <Header />
+        </Suspense>
+      </Suspense>
       <main className="pt-24 pb-16">
         <div className="max-w-3xl mx-auto px-6 lg:px-8">
           <Link 

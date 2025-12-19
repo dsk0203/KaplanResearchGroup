@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
@@ -26,7 +26,7 @@ const links: {
   },
 ];
 
-const Header = () => {
+const HeaderContent = () => {
   const searchParams = useSearchParams();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -196,4 +196,10 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default function Header() {
+  return (
+    <Suspense fallback={<div className="h-16 bg-white/95 backdrop-blur-sm shadow-sm" />}>
+      <HeaderContent />
+    </Suspense>
+  );
+}
