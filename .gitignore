@@ -1,0 +1,50 @@
+# Dependencies
+/node_modules
+
+# Next.js build output
+/.next/
+/out/
+
+# Production build
+/build
+
+# Miscellaneous
+.DS_Store
+*.pem
+
+# Local environment files
+.env*.local
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# envs
+.env    
+*.env
+
+
+### yeah
+app/api/fetch-emails/
+app/admin/*
+
+# sitemap
+public/sitemap-0.xml
+public/sitemap.xml
+
+
+#
+scripts/*
+scripts
+
+###
+*.md  
+.env
