@@ -1,5 +1,6 @@
 import type { JSX } from "react";
 import { StaticImageData } from "next/image";
+import { ArticleContent as BestCryptoTaxSoftware2026 } from "./articles/best-crypto-tax-software-2026";
 
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
@@ -172,7 +173,7 @@ export type articleType = {
 };
 
 // These styles are used in the content of the articles. When you update them, all articles will be updated.
-const styles: {
+export const styles: {
   [key: string]: string;
 } = {
   h2: "text-2xl lg:text-4xl font-bold tracking-tight mb-4 text-base-content",
@@ -398,5 +399,21 @@ export const articles: articleType[] = [
         </section>
       </>
     ),
+  },
+  {
+    slug: "best-crypto-tax-software-2026",
+    title: "Best Crypto Tax Software (2026): A Research-Based Comparative Analysis",
+    description:
+      "A comprehensive comparison of cryptocurrency tax software platforms based on accuracy, coverage, user experience, tax optimization, and audit support.",
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.capital),
+    ],
+    author: authors.find((author) => author.slug === authorSlugs.david),
+    publishedAt: "2026-01-15",
+    image: {
+      urlRelative: "/blog/crypto-tax/header.jpg",
+      alt: "Cryptocurrency Tax Software Comparison",
+    },
+    content: <BestCryptoTaxSoftware2026 />,
   },
 ];

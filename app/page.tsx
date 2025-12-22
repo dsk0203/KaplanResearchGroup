@@ -1,41 +1,19 @@
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { articles } from "@/app/blog/_assets/content";
 
-const insights = [
-  {
-    category: "Artificial Intelligence",
-    date: "December 18, 2025",
-    author: "David Shein, Senior Research Analyst",
-    title: "Enterprise AI Adoption: Infrastructure Requirements and ROI Analysis",
-    excerpt: "A comprehensive examination of the capital expenditure patterns and operational efficiency gains observed across Fortune 500 AI implementations.",
-    slug: "enterprise-ai-adoption",
-  },
-  {
-    category: "Energy Markets",
-    date: "December 15, 2025",
-    author: "David Shein, Senior Research Analyst",
-    title: "Critical Minerals Supply Chain: Geopolitical Risk Assessment",
-    excerpt: "Mapping the concentration risks in lithium, cobalt, and rare earth supply chains with scenario-based disruption modeling.",
-    slug: "critical-minerals-supply-chain",
-  },
-  {
-    category: "Capital Markets",
-    date: "December 12, 2025",
-    author: "David Shein, Senior Research Analyst",
-    title: "Private Credit Expansion: Systemic Risk Considerations",
-    excerpt: "Analyzing the rapid growth of private credit markets and potential implications for financial system stability.",
-    slug: "private-credit-expansion",
-  },
-  {
-    category: "Technology Infrastructure",
-    date: "December 10, 2025",
-    author: "David Shein, Senior Research Analyst",
-    title: "Data Center Capacity Constraints: Power and Real Estate Dynamics",
-    excerpt: "Evaluating the infrastructure bottlenecks facing hyperscale computing expansion and investment implications.",
-    slug: "data-center-capacity",
-  },
-];
+const insights = articles
+  .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
+  .slice(0, 12)
+  .map(article => ({
+  category: article.categories[0]?.title || '',
+  date: new Date(article.publishedAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }),
+  author: `${article.author.name}, ${article.author.job}`,
+  title: article.title,
+  excerpt: article.description,
+  slug: article.slug,
+}));
 
 export default function Page() {
   return (
