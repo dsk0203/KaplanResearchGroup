@@ -1,7 +1,7 @@
 import { MongoClient } from "mongodb";
 
 // This lib is use just to connect to the database in next-auth.
-// We don't use it anywhere else in the API routes—we use mongoose.js instead (to be able to use models)
+// We don't use it anywhere else in the API routes - we use mongoose.js instead (to be able to use models)
 // See /libs/nextauth.js file.
 
 declare global {

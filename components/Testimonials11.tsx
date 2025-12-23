@@ -87,7 +87,7 @@ const list: {
     type: refTypes.twitter,
     // Link to the person's testimonial. It's more trustable
     link: "https://twitter.com/marc_louvion",
-    // A statically imported image (usually from your public folder—recommended) or a link to the person's avatar. Shows a fallback letter if not provided
+    // A statically imported image (usually from your public folder - recommended) or a link to the person's avatar. Shows a fallback letter if not provided
     img: "https://pbs.twimg.com/profile_images/1514863683574599681/9k7PqDTA_400x400.jpg",
     // You can display video testimonials to build more trust. Just swap the type above to "video" and add at least the video source below
     // videoSrc: "/jack.mp4"
@@ -388,7 +388,7 @@ const Testimonials11 = () => {
           </li>
 
           <li className="hidden md:grid order-none md:order-first lg:order-none col-span-2 grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-            {/* BIG FEATURED TESTIMONIAL — THE LAST ONE IN THE LIST (11th) */}
+            {/* BIG FEATURED TESTIMONIAL  -  THE LAST ONE IN THE LIST (11th) */}
             <ul className="col-span-2">
               <li>
                 <figure className="relative h-full p-6 bg-base-100 rounded-lg">

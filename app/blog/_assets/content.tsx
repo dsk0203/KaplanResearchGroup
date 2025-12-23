@@ -1,6 +1,7 @@
 import type { JSX } from "react";
 import { StaticImageData } from "next/image";
 import { ArticleContent as BestCryptoTaxSoftware2026 } from "./articles/best-crypto-tax-software-2026";
+import { ArticleContent as BestWayToLearnSpanish2026 } from "./articles/best-way-to-learn-spanish";
 
 // ==================================================================================================================================================================
 // BLOG CATEGORIES 🏷️
@@ -19,6 +20,7 @@ const categorySlugs: { [key: string]: string } = {
   energy: "energy-markets",
   capital: "capital-markets",
   tech: "technology-infrastructure",
+  education: "education",
 };
 
 export const categories: categoryType[] = [
@@ -53,6 +55,14 @@ export const categories: categoryType[] = [
     description:
       "Analysis of data center capacity, cloud infrastructure, and technology investment trends.",
     descriptionShort: "Technology infrastructure analysis.",
+  },
+  {
+    slug: categorySlugs.education,
+    title: "Education",
+    titleShort: "Education",
+    description:
+      "Research on learning methodologies, educational technology, and language acquisition strategies.",
+    descriptionShort: "Education and learning research.",
   },
 ];
 
@@ -176,9 +186,9 @@ export type articleType = {
 export const styles: {
   [key: string]: string;
 } = {
-  h2: "text-2xl lg:text-4xl font-bold tracking-tight mb-4 text-base-content",
+  h2: "text-2xl lg:text-4xl font-bold tracking-tight my-12 text-base-content",
   h3: "text-xl lg:text-2xl font-bold tracking-tight mb-2 text-base-content",
-  p: "text-base-content/90 leading-relaxed",
+  p: "text-base-content/90 leading-relaxed mb-4",
   ul: "list-inside list-disc text-base-content/90 leading-relaxed",
   li: "list-item",
   // Altnernatively, you can use the library react-syntax-highlighter to display code snippets.
@@ -416,4 +426,22 @@ export const articles: articleType[] = [
     },
     content: <BestCryptoTaxSoftware2026 />,
   },
+    {
+    slug: "best-way-to-learn-spanish-2026",
+    title: "Spanish Language Mastery (2026): Evidence-Based Learning Strategies",
+    description:
+      "Evaluating modern Spanish learning platforms through the lens of cognitive science, retention mechanisms, and practical conversational ability.",
+    categories: [
+      categories.find((category) => category.slug === categorySlugs.education),
+    ],
+    author: authors.find((author) => author.slug === authorSlugs.david),
+    publishedAt: "2026-01-10",
+    image: {
+      urlRelative: "/blog/spanish-learning/header.jpg",
+      alt: "Spanish Language Learning Methods",
+    },
+    content: <BestWayToLearnSpanish2026 />,
+  },
 ];
+
+
